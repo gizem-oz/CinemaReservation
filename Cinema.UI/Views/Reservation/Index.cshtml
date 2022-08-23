@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Cinema.Entities.Concrete.Reservation>
+
+@{
+    ViewData["Title"] = "Index";
+    var role = (string)ViewBag.Role;
+    if (role == "Employee" )
+    {
+        Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
+    }
+}
+
+<hr />
+<h1>Rezervasyonlar</h1>
+<hr />
+
+<h1>Onaylanan Rezervasyonlar</h1>
+<table class="table">
+    <tr>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Film</th>
+        <th>Salon</th>
+        <th>Koltuk</th>
+        <th>Film Günü</th>
+        <th>Oluşturulma Tarihi</th>
+        <th>Durum</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.Status)
+        {
+<tr>
+    <td>@Html.DisplayFor(modelItem => item.Customer.FirstName)</td>
+    <td>@Html.DisplayFor(modelItem => item.Customer.LastName)</td>
+    <td>@Html.DisplayFor(modelItem => item.Movie.Name)</td>
+    <td>@Html.DisplayFor(modelItem => item.Room.Name)</td>
+    <td>@Html.DisplayFor(modelItem => item.Seat.Name)</td>
+    <td>@Html.DisplayFor(modelItem => item.MovieDate)</td>
+    <td>@Html.DisplayFor(modelItem => item.CreateDate)</td>
+    <td>@Html.DisplayFor(modelItem => item.Status)</td>
+    @if (User.IsInRole("Admin"))
+    {
+        <td><a href="/Reservation/ReservationDelete/@item.Id" class="btn btn-danger">İptal Et</a></td>
+    }
+
+    <td><a href="/Reservation/Delete/@item.Id" class="btn btn-dark">Beklemeye Al</a></td>
+</tr>
+        }
+
+    }
+</table>
+
+    <h1>Onay Bekleyen Rezervasyonlar</h1>
+    <table class="table">
+        <tr>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Film</th>
+            <th>Salon</th>
+            <th>Koltuk</th>
+            <th>Film Günü</th>
+            <th>Oluşturulma Tarihi</th>
+            <th>Durum</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            if (!item.Status)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Customer.FirstName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Customer.LastName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Movie.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Room.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Seat.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.MovieDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.CreateDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                    <td><a href="/Reservation/UpdateConfirm/@item.Id" class="btn btn-success">Onayla</a></td>
+                </tr>
+                
+            }
+        }
+    </table>
+

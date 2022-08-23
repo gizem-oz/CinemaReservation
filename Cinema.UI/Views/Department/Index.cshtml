@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Cinema.Entities.Concrete.Department>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Departmanlar</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Departman Oluştur</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Departman
+            </th>
+            <th>
+                Durum
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.ActionLink("Güncelle", "Update", new {id=item.Id}) |
+                @Html.ActionLink("Detaylar", "Details", new {id=item.Id}) |
+                @Html.ActionLink("Sil", "Delete", new { id=item.Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

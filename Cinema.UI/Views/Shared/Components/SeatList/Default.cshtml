@@ -1,0 +1,91 @@
+﻿@model List<Cinema.Entities.Concrete.Seat>
+@using Cinema.Entities.Concrete
+@{ List<Ticket> ticketSeats = ViewBag.TicketSeats as List<Ticket>; }
+
+
+<div class="container">
+    <div class="row">
+        <div class="span5">
+            <div>
+                @*<table class="table table-striped table-condensed">
+
+                            <tr>
+                                <th>Seçim</th>
+                                <th>Oda Adı</th>
+                                <th>Durumu</th>
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                if (item.Status)
+                                {
+                <tr>
+                    <td><input value="@item.RoomId" name="RoomId" type="radio" /></td>
+                    <td>@item.Name </td>
+                    <td>@item.Status</td>
+                </tr>}
+                            }
+                            <tr>
+                                <th>Oda Adı</th>
+                                <th>Durumu</th>
+                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                if (!item.Status)
+                                {
+
+                <tr>
+                    <td>@item.Room.Name</td>
+                    <td>@item.Status</td>
+                    <td><span class="label">Inactive</span></td>
+                </tr>
+        }
+        }*@
+                @*</table>*@
+
+                <h1> Koltuk Seçimi</h1>
+                <table class="table table-striped table-condensed">
+                    <tr>
+                        <th>Seçim</th>
+                        <th>Koltuk Adı</th>
+                        <th>Durumu</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        if (item.Status)
+                        {
+                           <tr>
+                               <td><input value="@item.SeatId" name="SeatId" type="radio" /></td>
+                          
+                               <td>@item.Name</td>
+                               <td>@item.Status</td>
+                           </tr>
+                        }
+                    }
+                </table>
+                <h1>Rezervasyon Edilen Koltuklar</h1>
+                <table class="table table-striped table-condensed">
+                    <tr>
+                        <th>Seçim</th>
+                        <th>Koltuk Adı</th>
+                        <th>Durumu</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        
+                       if (!item.Status)
+                       {
+                       
+                           <tr>
+                               <td>_</td>
+                               <td>@item.Name</td>
+                               <td><span class="label">Inactive</span></td>
+                           </tr>
+                        }
+                    }
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

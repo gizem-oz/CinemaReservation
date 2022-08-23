@@ -1,0 +1,63 @@
+﻿@model List<Cinema.Entities.Concrete.Reservation>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Rezervasyonlarım</h1>
+<table class="table">
+    <tr>
+        <th>
+            Ad
+        </th>
+        <th>
+            Soyad
+        </th>
+        <th>
+            Film Adı
+        </th>
+        <th>
+            Oda
+        </th>
+        <th>
+            Koltuk Numarası
+        </th>
+        <th>Fiyat</th>
+        <th>
+            Film Tarihi
+        </th>
+        <th>
+            Oluşturulma Tarihi
+        </th>
+        <th>
+            Rezervasyon Durumu
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@Html.DisplayFor(modelItem => item.Customer.FirstName)</td>
+    <td>@Html.DisplayFor(modelItem => item.Customer.LastName)</td>
+    <td>@Html.DisplayFor(modelItem => item.Movie.Name)</td>
+    <td>@Html.DisplayFor(modelItem => item.Room.Name)</td>
+    <td>@Html.DisplayFor(modelItem => item.Seat.Name)</td>
+    <td>@Html.DisplayFor(modelItem => (item.Movie.Price)) TL</td>
+    <td>@Html.DisplayFor(modelItem => item.MovieDate)</td>
+    <td>@Html.DisplayFor(modelItem => item.CreateDate)</td>
+    @if (item.Status == true)
+    {
+        <td>Onaylandı</td>
+    }
+    else if (item.Status == false)
+    {
+        <td>Onay bekliyor</td>
+    }
+    else
+    {
+        <td>İptal edildi</td>
+    }
+</tr>
+
+        
+    }
+</table>

@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Sinema Günlerim</title>
+    <link href="~/twitter-bootstrap/css/bootstrap.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <style type="text/css">
+        body {
+            background-image:url('@Url.Content("~/img/abstract-stock-photos-with-arrows-1163417.jpg")');
+            background-size:cover;
+        }
+    </style>
+</head>
+<body>
+    @RenderSection("privateCss", false)
+
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid" style="background-color:azure">
+                
+   <h1>Sinema Günlerim</h1>
+
+                <ul class="navbar-nav flex-grow-1">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+        <li class="nav-item" style="margin-left:auto">
+            <a class="nav-link text-dark" asp-controller="Home" asp-action="UserIndex">Anasayfa</a>
+        </li>
+                        <li class="nav-item" style="margin-left:auto">
+                            <a class="nav-link text-dark" asp-controller="UserAction" asp-action="Reservation">Rezervasyonlarım</a>
+                        </li>
+                                        <li class="nav-item" style="margin-left:auto">
+                                            <a class="nav-link text-dark" asp-controller="UserAction" asp-action="Index">Filmler</a>
+                                        </li>
+                                                        <li class="nav-item" style=" margin-left:auto">
+                                                            <a class="nav-link text-dark" asp-controller="Account" asp-action="LogOut">Çıkış</a>
+                                                        </li> }
+                                                                    else
+                                                                    {
+
+                                                        <li class="nav-item" style="margin-left:auto">
+                                                            <a class="nav-link text-dark" asp-controller="Account" asp-action="EmployeeRegister">Personel Üyeliği</a>
+                                                        </li>
+                                                                        <li class="nav-item" style="margin-left:auto">
+                                                                            <a class="nav-link text-dark" asp-controller="Account" asp-action="AdminRegister">Admin Üyeliği</a>
+                                                                        </li>
+                                                                                        <li class="nav-item" style="margin-left:auto">
+                                                                                            <a class="nav-link text-dark" asp-controller="Account" asp-action="Register">Üye Ol</a>
+                                                                                        </li>
+                                                                                                        <li class="nav-item" style=" margin-left:auto">
+                                                                                                            <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Giriş Yap</a>
+                                                                                                        </li>
+}
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3 mt-4">
+            @RenderBody()
+            <br />
+            <br />
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted" style="">
+        <div class="container">
+            &copy; 2022 - Sinema Günlerim- <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/jquery/jquery.min.js"></script>
+    <script src="~/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

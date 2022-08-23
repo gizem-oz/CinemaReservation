@@ -1,0 +1,53 @@
+﻿@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+<div class="container">
+        <div class="row">
+            <div class="col-sm-4"> </div>
+            <div class="col-md-4">
+
+                <div class="row">
+                    <h1 class="text-center text-success"> Giriş Yap</h1>
+                    
+                </div>
+                <div class="alert-danger" asp-validation-summary="ModelOnly">
+                </div>
+
+                <div class="col-sm-12">
+
+                    <form method="post" asp-action="Login" asp-controller="Account">
+
+                        <div class="form-group">
+                            <label for="email">E-Posta Adresi</label>
+                            <input name="Email" type="email" class="form-control" id="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pwd">Parola</label>
+                            <input name="Password" type="password" class="form-control" id="pwd">
+                        </div>
+                        <div class="row  mt-2">
+                            <div class="col-12">
+
+
+                                <input type="checkbox" value="lsRememberMe" id="RememberMe"> <label for="RememberMe">Beni Hatırla</label>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary w-100">Griş</button>
+                            </div>
+                        </div>
+
+
+
+                    </form>
+                    <div class="row mt-2">
+                        <div class="col-12 text-center">
+                            <a  class="btn text-primary" asp-action="Register" asp-controller="Account">Üyeliğin yok mu?</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

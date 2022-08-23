@@ -1,0 +1,24 @@
+﻿@model Cinema.Entities.Dtos.ReservationDto
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form method="post" asp-action="Index" asp-controller="UserAction">
+    <h1>Film ve Durum Bilgileri</h1>
+    <div class="form-group">
+        @await Component.InvokeAsync("MovieList")
+    </div>
+
+    <div class="form-group">
+        @await Component.InvokeAsync("SeatList")
+    </div>
+
+    <h1>Lütfen rezervasyon tarihi seçiniz.</h1>
+    <div class="form-group">
+        <input asp-for="MovieDate" class="form-control" />
+        <span asp-validation-for="MovieDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-success">Rezervasyon Oluştur</button>
+    </div>
+</form>
