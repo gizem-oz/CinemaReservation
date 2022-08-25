@@ -19,7 +19,7 @@
 Personel üyeliğinin yapıldığı sayfa görüntüsü;
 <img src="https://github.com//gizem-oz/CinemaReservation/blob/master/Documents/Images/personelUyeligi.jpg?raw=true" alt="personelUyeligi.jpg">
  <p>
- Burada alanda personel kayıt işlemi uygulanabilir. Gerekli bölüm ve diğer bilgiler eklenerek, sisteme personel kayıt işlemi tamamlanır. Yönetici sayfasında adres bilgisi istenmemişti fakat burada çalışanın adres bilgisi de kayıt altına alınmaktadır. Eğer bir üyelik mevcut ise yönetici sayfasında da belirtildiği üzere giriş sayfasına ilgili bağlantı yolları üzerinden erişim sağlanır.
+ Bu alanda personel kayıt işlemi uygulanabilir. Gerekli bölüm ve diğer bilgiler eklenerek, sisteme personel kayıt işlemi tamamlanır. Yönetici sayfasında adres bilgisi istenmemişti fakat burada çalışanın adres bilgisi de kayıt altına alınmaktadır. Eğer bir üyelik mevcut ise yönetici sayfasında da belirtildiği üzere giriş sayfasına ilgili bağlantı yolları üzerinden erişim sağlanır.
 </p>
 
 <h1>MÜŞTERİ ÜYELİĞİ</h1>
