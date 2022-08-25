@@ -1,6 +1,8 @@
 ﻿using Cinema.Business.Abstract;
+using Cinema.Business.ValidationRules.FluentValidation;
 using Cinema.DataAccess.Abstract;
 using Cinema.Entities.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,12 +20,22 @@ namespace Cinema.Business.Concrete
             _categoryDal = categoryDal;
         }
 
+        public ValidationResult Validator(Category category)
+        {
+            CategoryValidator validations = new CategoryValidator();
+            var result = validations.Validate(category);
+            return result;
+        }
         public async Task Add(Category category)
         {
-            var name = await _categoryDal.Get(x=>x.Name == category.Name);
-            if (name==null)
+            var result = Validator(category);
+            if (result.IsValid)
             {
-                await _categoryDal.Add(category);
+                var name = await _categoryDal.Get(x => x.Name == category.Name);
+                if (name == null)
+                {
+                    await _categoryDal.Add(category);
+                }
             }
                 
         }
@@ -57,7 +69,11 @@ namespace Cinema.Business.Concrete
 
         public async Task Update(Category category)
         {
-            await _categoryDal.Update(category);
+            var result = Validator(category);
+            if (result.IsValid)
+            {
+                await _categoryDal.Update(category);
+            }
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using Cinema.Business.Abstract;
+using Cinema.Business.ValidationRules.FluentValidation;
 using Cinema.DataAccess.Abstract;
 using Cinema.Entities.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,14 +19,23 @@ namespace Cinema.Business.Concrete
             _movieDal = movieDal;
         }
 
+        public ValidationResult Validator(Movie movie)
+        {
+            MovieValidator validations = new MovieValidator();
+            var result = validations.Validate(movie);
+            return result;
+        }
         public async Task Add(Movie movie)
         {
-            var name = await _movieDal.Get(x=>x.Name == movie.Name);
-            if (name == null)
+            var result = Validator(movie);
+            if (result.IsValid)
             {
-                await _movieDal.Add(movie);
+                var name = await _movieDal.Get(x => x.Name == movie.Name);
+                if (name == null)
+                {
+                    await _movieDal.Add(movie);
+                }
             }
-            
         }
 
         public async Task AddRange(List<Movie> movieList)
@@ -68,7 +79,11 @@ namespace Cinema.Business.Concrete
 
         public async Task Update(Movie movie)
         {
-            await _movieDal.Update(movie);
+            var result = Validator(movie);
+            if (result.IsValid)
+            {
+                await _movieDal.Update(movie);
+            }
         }
     }
 }

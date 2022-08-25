@@ -13,7 +13,6 @@ namespace Cinema.Business.ValidationRules.FluentValidation
         public CategoryValidator()
         {
             RuleFor(x => x.Name).NotEmpty();
-            RuleFor(x => x.Name).Length(2,30);
         }
     }
 }
