@@ -79,6 +79,11 @@ Müşteri üyeliğinin yapıldığı sayfa görüntüsü;
   Yönetici yetkisine sahip kullanıcı, rezervasyon üzerinde tüm yetkilere sahiptir. Gerektiğinde iptal edebilir, beklemeye alabilir ve onaylayabilir. Personel yetkileri arasında iptal etmek olmadığı için bu isteğin yönetici ile görüşülmesi gerekir. 
 </p>
 
+<h1>VERİ TABANI KULLANICI BİLGİLERİ </h1>
+<img src="https://github.com//gizem-oz/CinemaReservation/blob/master/Documents/Images/dbIdentityUser.jpg?raw=true" alt="dbIdentityUser.jpg">
+<p>
+ Yukarıdaki görsel veri tabanı kullanıcı bilgilerinin tutulduğu tablodur. Üye olan her kullanıcı bilgisi burada saklanmaktadır.
+</p>
 <h3>MÜŞTERİ SENARYOSU</h3>
 <p> *Müşteri üyeliği oluşturulur. </p>
 <p> *Giriş sayfasından giriş yapılır. </p>
