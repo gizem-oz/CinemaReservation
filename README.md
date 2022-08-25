@@ -66,6 +66,7 @@ Müşteri üyeliğinin yapıldığı sayfa görüntüsü;
 <p>
  Ekranda görüldüğü üzere, rezervasyon onayı bekleyen müşteriler listelenmektedir. Personelin onayladığı rezervasyonlar ‘Onaylanan Rezervasyonlar’ alanına aktarılır. Aşağıdaki görselde görüldüğü üzere, onaylanmış rezervasyonlar ‘Beklemeye Al’ butonu üzerinden geri alınabilir ve tekrar ‘Onay Bekleyen Rezervasyonlar’ alanına alınabilir. Rezervasyonu iptal etme yetkisi bulunmamaktadır. Bu yetki sadece yönetici rolündeki kullanıcılara tanımlanmıştır.
  </p>
+ <img src="https://github.com//gizem-oz/CinemaReservation/blob/master/Documents/Images/rezervasyon2Onayland%C4%B1.jpg?raw=true" alt="rezervasyon2Onaylandı.jpg">
  
 <h1>YÖNETİCİ ANASAYFASI</h1>
  <img src="https://github.com//gizem-oz/CinemaReservation/blob/master/Documents/Images/adminIndex.jpg?raw=true" alt="adminIndex.jpg">
