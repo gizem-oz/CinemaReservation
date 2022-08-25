@@ -11,7 +11,7 @@
 <h1>YÖNETİCİ ÜYELİĞİ</h1>
 <img src="https://github.com//gizem-oz/CinemaReservation/blob/master/Documents/Images/adminUyeligi.jpg?raw=true" alt="adminUyeligi.jpg">
  <p>
-  Yönetici kaydı gizli kalmalıdır. Burada kolaylık olması bakımından açığa alınarak yapılmıştır. Yönetici üyeliğinde sadece temel bilgiler alınmıştır. Üye ol butonu altında yönlendirme bağlantısı bulunmaktadır. Eğer bir üyeliği varsa bu bağlantı üzerinden veya sol üst tarafta bulunan “GirişYap” butonu üzerinden ilgili giriş ekranına yönlendirme işlemi yapılır.
+  Yönetici kaydı gizli kalmalıdır. Burada kolaylık olması bakımından açığa alınarak yapılmıştır. Yönetici üyeliğinde sadece temel bilgiler alınmıştır. Üye ol butonu altında yönlendirme bağlantısı bulunmaktadır. Eğer bir üyeliği varsa bu bağlantı üzerinden veya sağ üst tarafta bulunan “GirişYap” butonu üzerinden ilgili giriş ekranına yönlendirme işlemi yapılır.
 </p>
 
 <h1>PERSONEL ÜYELİĞİ</h1>
@@ -19,7 +19,7 @@
 Personel üyeliğinin yapıldığı sayfa görüntüsü;
 <img src="https://github.com//gizem-oz/CinemaReservation/blob/master/Documents/Images/personelUyeligi.jpg?raw=true" alt="personelUyeligi.jpg">
  <p>
- Burada alanda personel kayıt işlemi uygulanabilir. Gerekli bölüm ve diğer bilgiler eklenerek, sisteme personel kayıt işlemi tamamlanır. Yönetici sayfasında adres bilgisi istenmemişti fakat burada çalışanın adres bilgisi de kayıt altına alınmaktadır. Eğer bir üyelik mevcut ise yönetici sayfasında da belirtildiği üzere giriş sayfasına ilgili bağlantı yolları üzerinden erişim sağlanır.
+ Bu alanda personel kayıt işlemi uygulanabilir. Gerekli bölüm ve diğer bilgiler eklenerek, sisteme personel kayıt işlemi tamamlanır. Yönetici sayfasında adres bilgisi istenmemişti fakat burada çalışanın adres bilgisi de kayıt altına alınmaktadır. Eğer bir üyelik mevcut ise yönetici sayfasında da belirtildiği üzere giriş sayfasına ilgili bağlantı yolları üzerinden erişim sağlanır.
 </p>
 
 <h1>MÜŞTERİ ÜYELİĞİ</h1>
