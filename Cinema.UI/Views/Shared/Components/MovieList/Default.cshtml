@@ -17,7 +17,7 @@
                     if (item.Status)
                     {
                        <tr>
-                           <td><input value="@item.CategoryId" name="MovieId" type="radio" /></td>
+                           <td><input value="@item.Id" name="MovieId" type="radio" /></td>
                            <td>@item.Category.Name </td>
                            <td>@item.Name</td>
                            <td>@item.Price</td>
@@ -36,20 +36,18 @@
                     <th>Film Adı</th>
                     <th>Fiyat</th>
                     <th>Durum</th>
-
                 </tr>
                 @foreach (var item in Model)
                 {
                     if (!item.Status)
                     {
-            <tr>
-                <td>_</td>
-                <td>@item.Name</td>
-                <td>@item.Category.Name</td>
-                <td>@item.Price</td>
-                <td><span class="label">Inactive</span></td>
-
-            </tr>
+                       <tr>
+                          <td>_</td>
+                          <td>@item.Name</td>
+                          <td>@item.Category.Name</td>
+                          <td>@item.Price</td>
+                          <td><span class="label">Inactive</span></td>
+                       </tr>
                     }
                 }
             </table>

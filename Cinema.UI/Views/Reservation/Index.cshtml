@@ -21,7 +21,7 @@
         <th>Film</th>
         <th>Salon</th>
         <th>Koltuk</th>
-        <th>Film Günü</th>
+        <th>Film Tarihi</th>
         <th>Oluşturulma Tarihi</th>
         <th>Durum</th>
     </tr>
@@ -36,7 +36,7 @@
     <td>@Html.DisplayFor(modelItem => item.Movie.Name)</td>
     <td>@Html.DisplayFor(modelItem => item.Room.Name)</td>
     <td>@Html.DisplayFor(modelItem => item.Seat.Name)</td>
-    <td>@Html.DisplayFor(modelItem => item.MovieDate)</td>
+    <td>@Html.DisplayFor(modelItem => item.MovieDate.Day)/@Html.DisplayFor(modelItem => item.MovieDate.Month)/@Html.DisplayFor(modelItem => item.MovieDate.Year)</td>
     <td>@Html.DisplayFor(modelItem => item.CreateDate)</td>
     <td>@Html.DisplayFor(modelItem => item.Status)</td>
     @if (User.IsInRole("Admin"))
@@ -59,7 +59,7 @@
             <th>Film</th>
             <th>Salon</th>
             <th>Koltuk</th>
-            <th>Film Günü</th>
+            <th>Film Tarihi</th>
             <th>Oluşturulma Tarihi</th>
             <th>Durum</th>
         </tr>
@@ -74,7 +74,7 @@
                     <td>@Html.DisplayFor(modelItem => item.Movie.Name)</td>
                     <td>@Html.DisplayFor(modelItem => item.Room.Name)</td>
                     <td>@Html.DisplayFor(modelItem => item.Seat.Name)</td>
-                    <td>@Html.DisplayFor(modelItem => item.MovieDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.MovieDate.Day)/@Html.DisplayFor(modelItem => item.MovieDate.Month)/@Html.DisplayFor(modelItem => item.MovieDate.Year)</td>
                     <td>@Html.DisplayFor(modelItem => item.CreateDate)</td>
                     <td>@Html.DisplayFor(modelItem => item.Status)</td>
                     <td><a href="/Reservation/UpdateConfirm/@item.Id" class="btn btn-success">Onayla</a></td>
