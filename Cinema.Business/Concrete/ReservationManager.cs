@@ -19,9 +19,7 @@ namespace Cinema.Business.Concrete
 
         public async Task Add(Reservation reservation)
         {
-            
-                    await _reservationDal.Add(reservation);
-            
+                await _reservationDal.Add(reservation);
         }
 
         public async Task AddRange(List<Reservation> reservation)

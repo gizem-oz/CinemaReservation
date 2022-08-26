@@ -39,12 +39,13 @@
     <td>@Html.DisplayFor(modelItem => item.MovieDate.Day)/@Html.DisplayFor(modelItem => item.MovieDate.Month)/@Html.DisplayFor(modelItem => item.MovieDate.Year)</td>
     <td>@Html.DisplayFor(modelItem => item.CreateDate)</td>
     <td>@Html.DisplayFor(modelItem => item.Status)</td>
+
+
+    <td><a href="/Reservation/Delete/@item.Id" class="btn btn-dark">Beklemeye Al</a></td>
     @if (User.IsInRole("Admin"))
     {
         <td><a href="/Reservation/ReservationDelete/@item.Id" class="btn btn-danger">İptal Et</a></td>
     }
-
-    <td><a href="/Reservation/Delete/@item.Id" class="btn btn-dark">Beklemeye Al</a></td>
 </tr>
         }
 
@@ -68,17 +69,22 @@
         {
             if (!item.Status)
             {
-                <tr>
-                    <td>@Html.DisplayFor(modelItem => item.Customer.FirstName)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Customer.LastName)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Movie.Name)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Room.Name)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Seat.Name)</td>
-                    <td>@Html.DisplayFor(modelItem => item.MovieDate.Day)/@Html.DisplayFor(modelItem => item.MovieDate.Month)/@Html.DisplayFor(modelItem => item.MovieDate.Year)</td>
-                    <td>@Html.DisplayFor(modelItem => item.CreateDate)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Status)</td>
-                    <td><a href="/Reservation/UpdateConfirm/@item.Id" class="btn btn-success">Onayla</a></td>
-                </tr>
+    <tr>
+        <td>@Html.DisplayFor(modelItem => item.Customer.FirstName)</td>
+        <td>@Html.DisplayFor(modelItem => item.Customer.LastName)</td>
+        <td>@Html.DisplayFor(modelItem => item.Movie.Name)</td>
+        <td>@Html.DisplayFor(modelItem => item.Room.Name)</td>
+        <td>@Html.DisplayFor(modelItem => item.Seat.Name)</td>
+        <td>@Html.DisplayFor(modelItem => item.MovieDate.Day)/@Html.DisplayFor(modelItem => item.MovieDate.Month)/@Html.DisplayFor(modelItem => item.MovieDate.Year)</td>
+        <td>@Html.DisplayFor(modelItem => item.CreateDate)</td>
+        <td>@Html.DisplayFor(modelItem => item.Status)</td>
+
+        <td><a href="/Reservation/UpdateConfirm/@item.Id" class="btn btn-success">Onayla</a></td>
+        @if (User.IsInRole("Admin"))
+        {
+            <td><a href="/Reservation/ReservationDelete/@item.Id" class="btn btn-danger">İptal Et</a></td>
+        }
+    </tr>
                 
             }
         }

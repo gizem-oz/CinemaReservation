@@ -37,6 +37,10 @@ namespace Cinema.UI.Controllers
             model.CustomerId = user.Id;
             model.RoomId = 1;
             var seat = await _seatService.GetSeatById(model.SeatId);
+            if (model.MovieDate<DateTime.Now)
+            {
+                model.MovieDate= DateTime.Now.AddDays(1);
+            }
             Reservation reservation = _mapper.Map<Reservation>(model);
             await _reservationService.Add(reservation);
             seat.Status = false;
